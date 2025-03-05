@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TableVariant__res" load_steps=6 format=3 uid="uid://d2kksr5rgyifm"]
+
+[ext_resource type="Texture2D" uid="uid://belh5373lmvyu" path="res://Assets/Graphics/Tables/Base/GameBoard__bg.png" id="1_b37gd"]
+[ext_resource type="Script" uid="uid://d0kkghrtf4h53" path="res://Assets/resources/TableVariants/TableVariant__res.gd" id="1_rioot"]
+[ext_resource type="Texture2D" uid="uid://cbfg47vop7056" path="res://Assets/Graphics/Tables/Base/Board__fg.png" id="2_5stmw"]
+[ext_resource type="Texture2D" uid="uid://dv1xx6k7t8hwo" path="res://Assets/Graphics/Tables/Base/felt__fg.png" id="4_bv2ym"]
+[ext_resource type="Texture2D" uid="uid://c2fpc8t2sf885" path="res://Assets/Graphics/Tables/Base/Felt__mg.png" id="5_cxi7s"]
+
+[resource]
+script = ExtResource("1_rioot")
+backcolor = ExtResource("1_b37gd")
+backtexture = ExtResource("2_5stmw")
+tableback = ExtResource("5_cxi7s")
+tablefelt = ExtResource("4_bv2ym")
+metadata/_custom_type_script = "uid://d0kkghrtf4h53"

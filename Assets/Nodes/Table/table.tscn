@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://b418csxr6ygqa"]
+
+[ext_resource type="Script" uid="uid://bmyk1m1j6spum" path="res://Assets/Nodes/Table/table.gd" id="1_813ju"]
+[ext_resource type="Texture2D" uid="uid://belh5373lmvyu" path="res://Assets/Graphics/Tables/Base/GameBoard__bg.png" id="1_fto76"]
+[ext_resource type="Resource" uid="uid://d2kksr5rgyifm" path="res://Assets/resources/TableVariants/DefaultTable.tres" id="2_bcgri"]
+[ext_resource type="Texture2D" uid="uid://cbfg47vop7056" path="res://Assets/Graphics/Tables/Base/Board__fg.png" id="4_7xe5h"]
+[ext_resource type="Texture2D" uid="uid://c2fpc8t2sf885" path="res://Assets/Graphics/Tables/Base/Felt__mg.png" id="5_djg4g"]
+[ext_resource type="Texture2D" uid="uid://dv1xx6k7t8hwo" path="res://Assets/Graphics/Tables/Base/felt__fg.png" id="6_b5uni"]
+
+[node name="Table" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fto76")
+expand_mode = 4
+script = ExtResource("1_813ju")
+table__res = ExtResource("2_bcgri")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_7xe5h")
+expand_mode = 4
+
+[node name="tablerim" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_djg4g")
+expand_mode = 4
+
+[node name="felttexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_b5uni")
+expand_mode = 4

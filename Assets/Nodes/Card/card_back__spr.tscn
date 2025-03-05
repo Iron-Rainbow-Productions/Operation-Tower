@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqextf172gi8a"]
+
+[ext_resource type="Script" uid="uid://db6q6ypsnd6ei" path="res://Assets/Nodes/Card/card_back__spr.gd" id="1_7hqnm"]
+
+[node name="CardBack__spr" type="Sprite2D"]
+script = ExtResource("1_7hqnm")
+
+[node name="Design" type="Sprite2D" parent="."]
+
+[node name="Logo" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)

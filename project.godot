@@ -11,12 +11,21 @@ config_version=5
 [application]
 
 config/name="Operation Tower"
+run/main_scene="uid://cv8q1i66mpl11"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameDealer="*res://Globals/GameDealer.gd"
+SignalRelay="*res://Globals/SignalRelay.gd"
+
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/size/initial_position_type=2
+window/stretch/mode="canvas_items"
 
 [rendering]
 
