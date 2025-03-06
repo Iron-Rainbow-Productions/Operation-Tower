@@ -1,9 +1,16 @@
 extends Node2D
 class_name Card
 
+signal spare_used
+
+
 @export var Card_Res:CardVariant__res 
 
 @export var card:int = 0
+@export var tower_coordinates = [0,0]
+@export var burnt_card = false
+@export var heroed = false
+
 
 @onready var one__bg = $one
 @onready var two__bg = $two
@@ -27,8 +34,9 @@ seven__bg,hero__bg,burn__fg]
 
 
 func _ready():
-	pass
-
+	burner.emitting = false
+	blaster.emitting = false
+	
 func turn_off():
 	for state in cardstates:
 		state.visible = false
@@ -60,8 +68,55 @@ func build_Card():
 	cardback__bg.design.texture = Card_Res.cardbackbackdesign
 	cardback__bg.logo.texture = Card_Res.logo
 
+func deck_ready():
+	cardback__bg.texture = Card_Res.cardbackbackground
+	cardback__bg.design.texture = Card_Res.cardbackbackdesign
+	cardback__bg.logo.texture = Card_Res.logo
+
 func assign_Card(id):
 	cardstates[id].visible = true
 
 func flip_Card():
+	print(name, "___: Flipped")
 	animation_player.play("Card_Flip")
+
+func spare_Card(time_delay):
+	await get_tree().create_timer(time_delay).timeout
+	animation_player.play("Spare")
+
+func burn():
+	if !burnt_card:
+		print(name, "___: Burnt")
+		animation_player.play("Burn")
+		burnt_card = true
+
+func heroism():
+	print(name, "___: Heroism")
+	animation_player.play("Heroism")
+func be_hero():
+	if !heroed:
+		heroed = true
+		print(name, "___: Hero")
+		animation_player.play("Hero")
+
+func hide_Card():
+	print(name, "___: Hidden")
+	if !cardback__bg.visible: 
+		animation_player.play("unflip")
+	cardstates[card].visible = true
+
+func use_Spare(target_card:Card):
+	var tween = get_tree().create_tween()
+	tween.tween_property(self,"position", self.position + Vector2(0,0), .5)
+	
+	tween.tween_property(self,"position", self.position - Vector2(0,300), .2)
+	tween.parallel().tween_property(self,"z_index", 16, 1)
+	spare_Card(.5)
+	tween.tween_property(self,"position", self.position - Vector2(0,300), 1)
+
+	tween.tween_property(self,"z_index", target_card.z_index,.5)
+	tween.parallel().tween_property(self,"position",target_card.position,.5)
+	tween.parallel().tween_property(target_card,"z_index",target_card.z_index-1,.5)
+	
+	spare_used.emit()
+	

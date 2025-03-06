@@ -1825,142 +1825,177 @@ position = Vector2(-0.00800375, -1792)
 rotation = 6.28319
 
 [node name="Card_2" parent="." instance=ExtResource("1_rxskl")]
+z_index = 2
 position = Vector2(-184.006, -1360)
 rotation = 6.28319
 
 [node name="Card_3" parent="." instance=ExtResource("1_rxskl")]
+z_index = 2
 position = Vector2(195.994, -1360)
 rotation = 6.28319
 
 [node name="Card_4" parent="." instance=ExtResource("1_rxskl")]
+z_index = 4
 position = Vector2(-376.004, -911.998)
 rotation = 6.28319
 
 [node name="Card_5" parent="." instance=ExtResource("1_rxskl")]
+z_index = 4
 position = Vector2(3.99592, -911.998)
 rotation = 6.28319
 
 [node name="Card_6" parent="." instance=ExtResource("1_rxskl")]
+z_index = 4
 position = Vector2(383.996, -911.998)
 rotation = 6.28319
 
 [node name="Card_7" parent="." instance=ExtResource("1_rxskl")]
+z_index = 6
 position = Vector2(-568.002, -479.997)
 rotation = 6.28319
 
 [node name="Card_8" parent="." instance=ExtResource("1_rxskl")]
+z_index = 6
 position = Vector2(-188.002, -479.997)
 rotation = 6.28319
 
 [node name="Card_9" parent="." instance=ExtResource("1_rxskl")]
+z_index = 6
 position = Vector2(191.998, -479.997)
 rotation = 6.28319
 
 [node name="Card_10" parent="." instance=ExtResource("1_rxskl")]
+z_index = 6
 position = Vector2(571.998, -479.997)
 rotation = 6.28319
 
 [node name="Card_11" parent="." instance=ExtResource("1_rxskl")]
+z_index = 8
 position = Vector2(-760, -47.9966)
 rotation = 6.28319
 
 [node name="Card_12" parent="." instance=ExtResource("1_rxskl")]
+z_index = 8
 position = Vector2(-380, -47.9966)
 rotation = 6.28319
 
 [node name="Card_13" parent="." instance=ExtResource("1_rxskl")]
+z_index = 8
 position = Vector2(-0.000236719, -47.9966)
 rotation = 6.28319
 
 [node name="Card_14" parent="." instance=ExtResource("1_rxskl")]
+z_index = 8
 position = Vector2(380, -47.9966)
 rotation = 6.28319
 
 [node name="Card_15" parent="." instance=ExtResource("1_rxskl")]
+z_index = 8
 position = Vector2(760, -47.9966)
 rotation = 6.28319
 
 [node name="Card_16" parent="." instance=ExtResource("1_rxskl")]
+z_index = 10
 position = Vector2(-943.998, 392.004)
 rotation = 6.28319
 
 [node name="Card_17" parent="." instance=ExtResource("1_rxskl")]
+z_index = 10
 position = Vector2(-563.998, 392.004)
 rotation = 6.28319
 
 [node name="Card_18" parent="." instance=ExtResource("1_rxskl")]
+z_index = 10
 position = Vector2(-183.998, 392.004)
 rotation = 6.28319
 
 [node name="Card_19" parent="." instance=ExtResource("1_rxskl")]
+z_index = 10
 position = Vector2(196.002, 392.004)
 rotation = 6.28319
 
 [node name="Card_20" parent="." instance=ExtResource("1_rxskl")]
+z_index = 10
 position = Vector2(576.002, 392.004)
 rotation = 6.28319
 
 [node name="Card_21" parent="." instance=ExtResource("1_rxskl")]
+z_index = 10
 position = Vector2(956.002, 392.004)
 rotation = 6.28319
 
 [node name="Card_22" parent="." instance=ExtResource("1_rxskl")]
+z_index = 12
 position = Vector2(-1144, 816.005)
 rotation = 6.28319
 
 [node name="Card_23" parent="." instance=ExtResource("1_rxskl")]
+z_index = 12
 position = Vector2(-763.996, 816.005)
 rotation = 6.28319
 
 [node name="Card_24" parent="." instance=ExtResource("1_rxskl")]
+z_index = 12
 position = Vector2(-383.996, 816.005)
 rotation = 6.28319
 
 [node name="Card_25" parent="." instance=ExtResource("1_rxskl")]
+z_index = 12
 position = Vector2(-3.99631, 816.005)
 rotation = 6.28319
 
 [node name="Card_26" parent="." instance=ExtResource("1_rxskl")]
+z_index = 12
 position = Vector2(376.004, 816.005)
 rotation = 6.28319
 
 [node name="Card_27" parent="." instance=ExtResource("1_rxskl")]
+z_index = 12
 position = Vector2(756.004, 816.005)
 rotation = 6.28319
 
 [node name="Card_28" parent="." instance=ExtResource("1_rxskl")]
+z_index = 12
 position = Vector2(1136, 816.005)
 rotation = 6.28319
 
 [node name="Card_29" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(-1330, 1242)
 rotation = 6.28319
 
 [node name="Card_30" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(-950, 1242)
 rotation = 6.28319
 
 [node name="Card_31" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(-570, 1242)
 rotation = 6.28319
 
 [node name="Card_32" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(-190, 1242)
 rotation = 6.28319
 
 [node name="Card_33" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(190, 1242)
 rotation = 6.28319
 
 [node name="Card_34" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(570, 1242)
 rotation = 6.28319
 
 [node name="Card_35" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(950, 1242)
 rotation = 6.28319
 
 [node name="Card_36" parent="." instance=ExtResource("1_rxskl")]
+z_index = 14
 position = Vector2(1330, 1242)
 rotation = 6.28319
 

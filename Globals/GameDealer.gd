@@ -3,7 +3,13 @@ extends Node
 @export var turn = 1
 @export var burnt = false
 
-
+@onready var burner  = [1,1,1,1,1,1,1,1,1,
+					1,1,1,1,1,1,1,1,1,
+					1,1,1,1,1,1,1,1,1,
+					1,1,1,1,1,1,1,1,1,
+					1,1,1,1,1,1,1,1,1,
+					1,1,1,1,1,1,1,1,1,
+					1,1,1,1,1,1,1,1,1]
 @onready var nomoreheroes  = [1,1,1,1,1,1,1,1,1,
 					2,2,2,2,2,2,2,2,2,
 					3,3,3,3,3,3,3,3,3,
@@ -52,5 +58,5 @@ extends Node
 					7,7,7,7,7,7,7,7,7,7,
 					8,8,8,8]
 
-@onready var deckcontents = [emeralddeck, rubydeck, diamonddeck, platinumdeck,
+@onready var deckcontents = [burner,emeralddeck, rubydeck, diamonddeck, platinumdeck,
 							nomoreheroes, chosenone]
