@@ -29,21 +29,21 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+[node name="Controls" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 21
 
-[node name="Stay_btn" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Stay_btn" type="Button" parent="VBoxContainer/MarginContainer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 41
 text = "Stay
 "
 
-[node name="Hit_btn" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Hit_btn" type="Button" parent="VBoxContainer/MarginContainer/Controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 41
 text = "Hit
 "
 
-[connection signal="pressed" from="VBoxContainer/MarginContainer/HBoxContainer/Hit_btn" to="." method="_on_hit_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Controls/Hit_btn" to="." method="_on_hit_btn_pressed"]

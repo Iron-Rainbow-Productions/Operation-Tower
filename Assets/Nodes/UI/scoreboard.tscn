@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfalxljgele24"]
+
+[ext_resource type="Script" uid="uid://dl67ekggyuebd" path="res://Assets/Nodes/UI/scoreboard.gd" id="1_w4teh"]
+
+[node name="Scoreboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w4teh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Bank__lbl" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Bank: 000000"
+
+[node name="Tabled__lbl" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Table: 000000"
+horizontal_alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 137
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CurrentBet__lbl" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Bet: 0000"
+horizontal_alignment = 1
+
+[node name="Offer__lbl" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Offer: 0000"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_right = 35
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="RCText__lbl" type="Label" parent="VBoxContainer/HBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Row Value"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Rowscore__lbl" type="Label" parent="VBoxContainer/HBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0000/15"
+horizontal_alignment = 1

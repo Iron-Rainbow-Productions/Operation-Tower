@@ -6,6 +6,7 @@ signal spare_used
 
 @export var Card_Res:CardVariant__res 
 
+@export var is_spare = false
 @export var card:int = 0
 @export var tower_coordinates = [0,0]
 @export var burnt_card = false
@@ -81,18 +82,23 @@ func flip_Card():
 	animation_player.play("Card_Flip")
 
 func spare_Card(time_delay):
+	burnt_card = false
 	await get_tree().create_timer(time_delay).timeout
 	animation_player.play("Spare")
 
 func burn():
+	if is_spare:
+		await get_tree().create_timer(2).timeout
 	if !burnt_card:
 		print(name, "___: Burnt")
 		animation_player.play("Burn")
 		burnt_card = true
 
 func heroism():
-	print(name, "___: Heroism")
-	animation_player.play("Heroism")
+	if !heroed:
+		print(name, "___: Heroism")
+		animation_player.play("Heroism")
+		heroed = true
 func be_hero():
 	if !heroed:
 		heroed = true

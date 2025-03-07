@@ -1,5 +1,6 @@
 extends Node
 
+
 @export var turn = 1
 @export var burnt = false
 

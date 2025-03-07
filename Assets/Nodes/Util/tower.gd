@@ -5,6 +5,7 @@ var card_res:CardVariant__res
 
 var spare_there = true
 var good_save = false
+var burnt = false
 
 @onready var animation_player = $AnimationPlayer
 
@@ -115,11 +116,14 @@ func coordinate_Tower():
 			card.tower_coordinates[1] = address 
 			address += 1
 		row_address += 1
+	declare_spare()
+
+func declare_spare():
+	card_1.is_spare = true
 
 func deck_ready():
 	deck.deck_ready()
 	deck.cardback__bg.visible= true
-
 
 func reveal_row():
 	GameDealer.turn += 1
@@ -132,30 +136,59 @@ func reveal_row():
 			for card:Card in row2:
 				card.flip_Card()
 				calc_burn(GameDealer.turn)
+
 		3:
 			for card:Card in row3:
 				card.flip_Card()
 				calc_burn(GameDealer.turn)
+
 		4:
 			for card:Card in row4:
 				card.flip_Card()
 				calc_burn(GameDealer.turn)
+
 		5:
 			for card:Card in row5:
 				card.flip_Card()
 				calc_burn(GameDealer.turn)
+
 		6:
 			for card:Card in row6:
 				card.flip_Card()
 				calc_burn(GameDealer.turn)
+
 		7:
 			for card:Card in row7:
 				card.flip_Card()
 				calc_burn(GameDealer.turn)
+			
 		8:
 			for card:Card in row8:
 				card.flip_Card()
 				calc_burn(GameDealer.turn)
+	call_banker()
+	if !GameDealer.burnt:
+		await get_tree().create_timer(2).timeout
+		SignalRelay.row_good.emit()
+	else:
+		await get_tree().create_timer(2).timeout
+		SignalRelay.round_end.emit()
+
+func calc_score(row) -> int:
+	var rowscore = 0
+	if row > 8:
+		print("Overshot")
+		return 0
+	else:
+		if GameDealer.burnt:
+			return 0
+		else:
+			for x in rows[row]:
+				if x.card == 8:
+					rowscore = rowscore
+				else:
+					rowscore += x.card
+			return rowscore
 
 func calc_burn(row):
 	await get_tree().create_timer(1).timeout
@@ -190,6 +223,7 @@ func calc_burn(row):
 					else:
 						target2.burn()
 					calc_save(target2,row3,row)
+
 
 		3:
 			for card in row3:
@@ -289,6 +323,7 @@ func calc_save(card_id:Card, row, row_num):
 		if x.card == 8:
 			heroicAct(row,x)
 			GameDealer.burnt = false
+			call_banker()
 			return true
 	if spare_there == true:
 		spare_there = false
@@ -300,9 +335,11 @@ func calc_save(card_id:Card, row, row_num):
 		card_1.use_Spare(card_id)
 		calc_burn(row_num)
 		GameDealer.burnt= false
+		call_banker()
 		return true
 	else:
 		GameDealer.burnt = true
+		call_banker()
 		await get_tree().create_timer(1.5).timeout
 		#end_Round()
 		return false
@@ -314,3 +351,7 @@ func heroicAct(row, card:Card):
 	for x:Card in row:
 		if x.card != 8:
 			x.heroism()
+
+func call_banker():
+	Banker.active_score = calc_score(GameDealer.turn-1)
+	Banker.calc_offer()

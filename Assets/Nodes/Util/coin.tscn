@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctfunlyrm5yci"]
+
+[ext_resource type="Texture2D" uid="uid://c1wj8woiak5o1" path="res://RAW Assets/Coin.png" id="1_7nr34"]
+[ext_resource type="Script" uid="uid://bc5im6m6vg768" path="res://Assets/Nodes/Util/coin.gd" id="1_flonw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_flonw"]
+friction = 0.65
+bounce = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flonw"]
+size = Vector2(15.2295, 15.5699)
+
+[node name="Coin" type="RigidBody2D"]
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_flonw")
+script = ExtResource("1_flonw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, 1)
+scale = Vector2(1.05059, 0.513811)
+shape = SubResource("RectangleShape2D_flonw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7nr34")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 30.0
+offset_bottom = 36.0
+scale = Vector2(0.494, 0.27)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 0.65098)
